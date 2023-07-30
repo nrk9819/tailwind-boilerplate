@@ -3,6 +3,10 @@ module.exports = {
   content: ['./dist/**/*.html'],
   presets: [require('./presets/colors.js')],
   theme: {
+    fontFamily: {
+      sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+      heading: ['"Bricolage Grotesque"', 'Inter', 'sans-serif', 'system-ui'],
+    },
     spacing: {
       0: '0px',
       1: '1px',
@@ -27,6 +31,114 @@ module.exports = {
       160: '160px',
       224: '224px',
     },
+    extend: {
+      typography: ({ theme }) => ({
+        base: {
+          css: [
+            {
+              fontSize: '16px',
+              lineHeight: '1.7',
+              p: {
+                marginTop: '16px',
+                marginBottom: '16px',
+              },
+              h1: {
+                fontSize: '30px',
+                lineHeight: '1.25',
+                marginTop: '0',
+                marginBottom: '32px',
+              },
+              h2: {
+                fontSize: '24px',
+                lineHeight: '1.33',
+                marginTop: '40px',
+                marginBottom: '20px',
+              },
+              h3: {
+                fontSize: '20px',
+                lineHeight: '1.33',
+                marginTop: '24px',
+                marginBottom: '16px',
+              },
+              h4: {
+                fontSize: '18px',
+                lineHeight: '1.4',
+                marginTop: '16px',
+                marginBottom: '12px',
+              },
+            },
+          ],
+        },
+        xl: {
+          css: [
+            {
+              fontSize: '20px',
+              lineHeight: '1.6',
+              p: {
+                marginTop: '32px',
+                marginBottom: '32px',
+              },
+              h1: {
+                fontSize: '48px',
+                lineHeight: '56px',
+                marginBottom: '32px',
+              },
+              h3: {
+                marginBottom: '24px',
+                lineHeight: '38px',
+              },
+              h4: {
+                fontSize: '24px',
+                lineHeight: '32px',
+                marginTop: '40px',
+                marginBottom: '16px',
+              },
+              hr: {
+                marginTop: '56px',
+                marginBottom: '64px',
+              },
+            },
+          ],
+        },
+
+        gray: {
+          css: {
+            '--tw-prose-body': theme('colors.gray[800]'),
+            '--tw-prose-headings': theme('colors.gray[950]'),
+            '--tw-prose-lead': theme('colors.gray[700]'),
+            '--tw-prose-links': theme('colors.gray[950]'),
+            '--tw-prose-bold': theme('colors.gray[950]'),
+            '--tw-prose-counters': theme('colors.gray[500]'),
+            '--tw-prose-bullets': theme('colors.gray[500]'),
+            '--tw-prose-hr': theme('colors.gray[300]'),
+            '--tw-prose-quotes': theme('colors.gray[950]'),
+            '--tw-prose-quote-borders': theme('colors.gray[300]'),
+            '--tw-prose-captions': theme('colors.gray[700]'),
+            '--tw-prose-code': theme('colors.gray[950]'),
+            '--tw-prose-pre-code': theme('colors.gray[100]'),
+            '--tw-prose-pre-bg': theme('colors.gray[800]'),
+            '--tw-prose-th-borders': theme('colors.gray[300]'),
+            '--tw-prose-td-borders': theme('colors.gray[200]'),
+            '--tw-prose-invert-body': theme('colors.gray[200]'),
+            '--tw-prose-invert-headings': theme('colors.white'),
+            '--tw-prose-invert-lead': theme('colors.gray[300]'),
+            '--tw-prose-invert-links': theme('colors.white'),
+            '--tw-prose-invert-bold': theme('colors.white'),
+            '--tw-prose-invert-counters': theme('colors.gray[400]'),
+            '--tw-prose-invert-bullets': theme('colors.gray[600]'),
+            '--tw-prose-invert-hr': theme('colors.gray[700]'),
+            '--tw-prose-invert-quotes': theme('colors.gray[100]'),
+            '--tw-prose-invert-quote-borders': theme('colors.gray[700]'),
+            '--tw-prose-invert-captions': theme('colors.gray[400]'),
+            '--tw-prose-invert-code': theme('colors.white'),
+            '--tw-prose-invert-pre-code': theme('colors.gray[300]'),
+            '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
+            '--tw-prose-invert-th-borders': theme('colors.gray[600]'),
+            '--tw-prose-invert-td-borders': theme('colors.gray[700]'),
+          },
+        },
+      }),
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

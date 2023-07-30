@@ -12,18 +12,21 @@ const ctx = {
 
 function compileCSS() {
   const start = performance.now();
-
-  postcssrc(ctx).then(({ plugins, options }) => {
-    const css = readFileSync(options.from, 'utf8');
-    postcss(plugins)
-      .process(css, options)
-      .then(result => {
-        writeFileSync(options.to, result.css, 'utf8');
-        const end = performance.now();
-        const duration = (end - start).toFixed(2);
-        console.log(`CSS compiled in ${duration} ms`);
-      });
-  });
+  try {
+    postcssrc(ctx).then(({ plugins, options }) => {
+      const css = readFileSync(options.from, 'utf8');
+      postcss(plugins)
+        .process(css, options)
+        .then(result => {
+          writeFileSync(options.to, result.css, 'utf8');
+          const end = performance.now();
+          const duration = (end - start).toFixed(2);
+          console.log(`CSS compiled in ${duration} ms\n`);
+        });
+    });
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 // Check if the "--watch" or "-w" flag is provided
@@ -39,9 +42,14 @@ if (isWatchMode) {
   }
 
   compileCSS();
-  const watcher = chokidar.watch(tailwindConfig.content);
+  const watcher = chokidar.watch([
+    ...tailwindConfig.content,
+    './presets/**/*.js',
+    './tailwind.config.js',
+    './src/**/*.css',
+  ]);
   watcher.on('change', () => {
-    console.log('File change detected. Recompiling CSS...');
+    console.log('File change detected. Recompiling CSS...\n');
     compileCSS();
   });
 } else {
