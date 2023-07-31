@@ -1,70 +1,86 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./dist/**/*.html'],
-  presets: [require('./presets/colors.js')],
+  presets: [
+    require('./presets/colors.js'),
+    require('./presets/spacing.js'),
+    require('./presets/font-size.js'),
+  ],
   theme: {
-    fontFamily: {
-      sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
-      heading: ['"Bricolage Grotesque"', 'Inter', 'sans-serif', 'system-ui'],
-    },
-    spacing: {
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      6: '6px',
-      8: '8px',
-      10: '10px',
-      12: '12px',
-      16: '16px',
-      20: '20px',
-      24: '24px',
-      32: '32px',
-      40: '40px',
-      48: '48px',
-      56: '56px',
-      64: '64px',
-      80: '80px',
-      96: '96px',
-      128: '128px',
-      144: '144px',
-      160: '160px',
-      224: '224px',
-    },
     extend: {
+      fontFamily: {
+        sans: [
+          '"Source Sans 3"',
+          '"Noto Sans"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'system-ui',
+          'sans-serif',
+        ],
+        serif: ['"Source Serif 4"', '"Times New Roman"', 'serif', 'ui-serif'],
+        mono: [
+          '"Fira Code"',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          '"Liberation Mono"',
+          '"Courier New"',
+          'ui-monospace',
+          'monospace',
+        ],
+        heading: ['"Bricolage Grotesque"', 'Inter', 'sans-serif', 'system-ui'],
+      },
       typography: ({ theme }) => ({
+        DEFAULT: {
+          css: [
+            {
+              maxWidth: '70ch',
+              a: {
+                fontWeight: '540',
+              },
+              blockquote: {
+                fontWeight: '540',
+              },
+              code: {
+                fontWeight: '540',
+              },
+            },
+          ],
+        },
         base: {
           css: [
             {
-              fontSize: '16px',
+              fontSize: '1.6rem',
               lineHeight: '1.7',
               p: {
-                marginTop: '16px',
-                marginBottom: '16px',
+                marginTop: '1em',
+                marginBottom: '1em',
               },
               h1: {
-                fontSize: '30px',
+                fontSize: '3rem',
                 lineHeight: '1.25',
                 marginTop: '0',
-                marginBottom: '32px',
+                marginBottom: '1.066em',
+                fontWeight: theme('fontWeight.medium'),
               },
               h2: {
-                fontSize: '24px',
+                fontSize: '2.4rem',
                 lineHeight: '1.33',
-                marginTop: '40px',
-                marginBottom: '20px',
+                marginTop: '1.67em',
+                marginBottom: '0.83em',
               },
               h3: {
-                fontSize: '20px',
+                fontSize: '2rem',
                 lineHeight: '1.33',
-                marginTop: '24px',
-                marginBottom: '16px',
+                marginTop: '1.2em',
+                marginBottom: '0.8em',
               },
               h4: {
-                fontSize: '18px',
+                fontSize: '1.8rem',
                 lineHeight: '1.4',
-                marginTop: '16px',
-                marginBottom: '12px',
+                marginTop: '0.89em',
+                marginBottom: '0.67em',
               },
             },
           ],
@@ -72,30 +88,40 @@ module.exports = {
         xl: {
           css: [
             {
-              fontSize: '20px',
+              fontSize: '2rem',
               lineHeight: '1.6',
               p: {
-                marginTop: '32px',
-                marginBottom: '32px',
+                marginTop: '1.6em',
+                marginBottom: '1.6em',
               },
               h1: {
-                fontSize: '48px',
-                lineHeight: '56px',
-                marginBottom: '32px',
+                fontSize: '2.4em',
+                fontWeight: theme('fontWeight.medium'),
+                lineHeight: '1.15em',
+                letterSpacing: '-0.02em',
+                marginBottom: '0.67em',
+              },
+              h2: {
+                fontWeight: theme('fontWeight.medium'),
               },
               h3: {
-                marginBottom: '24px',
-                lineHeight: '38px',
+                fontWeight: theme('fontWeight.medium'),
+                lineHeight: '1.25em',
+                marginBottom: '0.8em',
               },
               h4: {
-                fontSize: '24px',
-                lineHeight: '32px',
-                marginTop: '40px',
-                marginBottom: '16px',
+                fontSize: '1.2em',
+                fontWeight: theme('fontWeight.medium'),
+                lineHeight: '1.33em',
+                marginTop: '1.67em',
+                marginBottom: '0.67em',
               },
               hr: {
-                marginTop: '56px',
-                marginBottom: '64px',
+                marginTop: '2.3em',
+                marginBottom: '2.6em',
+              },
+              pre: {
+                borderRadius: '16px',
               },
             },
           ],
@@ -111,7 +137,7 @@ module.exports = {
             '--tw-prose-counters': theme('colors.gray[500]'),
             '--tw-prose-bullets': theme('colors.gray[500]'),
             '--tw-prose-hr': theme('colors.gray[300]'),
-            '--tw-prose-quotes': theme('colors.gray[950]'),
+            '--tw-prose-quotes': theme('colors.gray[700]'),
             '--tw-prose-quote-borders': theme('colors.gray[300]'),
             '--tw-prose-captions': theme('colors.gray[700]'),
             '--tw-prose-code': theme('colors.gray[950]'),
