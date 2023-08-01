@@ -5,6 +5,7 @@ module.exports = {
     require('./presets/colors.js'),
     require('./presets/spacing.js'),
     require('./presets/font-size.js'),
+    require('./presets/border-radius.js'),
   ],
   theme: {
     extend: {
@@ -48,7 +49,6 @@ module.exports = {
               pre: {
                 position: 'relative',
                 overflow: 'hidden',
-                //whiteSpace: 'pre-wrap',
               },
               'pre code': {
                 fontWeight: '400',
@@ -141,7 +141,7 @@ module.exports = {
                 marginBottom: '2.6em',
               },
               pre: {
-                borderRadius: '16px',
+                borderRadius: '12px',
               },
             },
           ],
