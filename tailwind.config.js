@@ -43,7 +43,27 @@ module.exports = {
                 fontWeight: '540',
               },
               code: {
-                fontWeight: '540',
+                fontWeight: '580',
+              },
+              pre: {
+                position: 'relative',
+                overflow: 'hidden',
+                //whiteSpace: 'pre-wrap',
+              },
+              'pre code': {
+                fontWeight: '400',
+                display: 'block',
+                overflowX: 'auto',
+              },
+              'pre code::-webkit-scrollbar': {
+                height: '8px',
+              },
+              'pre code::-webkit-scrollbar-thumb': {
+                background: theme('colors.gray[600]'),
+                borderRadius: '4px',
+              },
+              'pre code::-webkit-scrollbar-thumb:hover': {
+                background: theme('colors.gray[400]'),
               },
             },
           ],
