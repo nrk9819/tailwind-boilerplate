@@ -44,9 +44,8 @@ if (isWatchMode) {
   compileCSS();
   const watcher = chokidar.watch([
     ...tailwindConfig.content,
-    './presets/**/*.js',
     './tailwind.config.js',
-    './src/**/*.css',
+    './src/**/*.{css,js}',
   ]);
   watcher.on('change', () => {
     console.log('File change detected. Recompiling CSS...\n');

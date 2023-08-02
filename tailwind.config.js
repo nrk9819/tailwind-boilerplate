@@ -1,13 +1,13 @@
-const padding = require('./presets/padding').theme;
-const spacing = require('./presets/spacing').theme;
-const margin = require('./presets/margin').theme;
-const borderRadius = require('./presets/border-radius').theme;
-const width = require('./presets/width').theme;
+const spacing = require('./src/presets/spacing').theme;
+const borderRadius = require('./src/presets/border-radius').theme;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./dist/**/*.html'],
-  presets: [require('./presets/colors.js'), require('./presets/font-size.js')],
+  presets: [
+    require('./src/presets/colors.js'),
+    require('./src/presets/font-size.js'),
+  ],
   theme: {
     ...spacing,
     ...borderRadius,
@@ -34,6 +34,9 @@ module.exports = {
           'monospace',
         ],
         heading: ['"Bricolage Grotesque"', 'Inter', 'sans-serif', 'system-ui'],
+      },
+      fontWeight: {
+        nexamedium: '540',
       },
       typography: ({ theme }) => ({
         DEFAULT: {

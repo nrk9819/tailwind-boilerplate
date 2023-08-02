@@ -1,5 +1,5 @@
 module.exports = ({ env }) => ({
-  from: './src/input.css',
+  from: './src/styles/input.css',
   to: './dist/style.css',
   plugins: {
     'postcss-import': {},
