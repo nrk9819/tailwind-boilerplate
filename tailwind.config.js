@@ -1,4 +1,5 @@
 const padding = require('./presets/padding').theme;
+const spacing = require('./presets/spacing').theme;
 const margin = require('./presets/margin').theme;
 const borderRadius = require('./presets/border-radius').theme;
 const width = require('./presets/width').theme;
@@ -8,10 +9,8 @@ module.exports = {
   content: ['./dist/**/*.html'],
   presets: [require('./presets/colors.js'), require('./presets/font-size.js')],
   theme: {
-    ...padding,
-    ...margin,
+    ...spacing,
     ...borderRadius,
-    ...width,
     extend: {
       fontFamily: {
         sans: [
