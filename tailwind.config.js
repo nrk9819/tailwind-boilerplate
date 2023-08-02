@@ -1,13 +1,17 @@
+const padding = require('./presets/padding').theme;
+const margin = require('./presets/margin').theme;
+const borderRadius = require('./presets/border-radius').theme;
+const width = require('./presets/width').theme;
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./dist/**/*.html'],
-  presets: [
-    require('./presets/colors.js'),
-    require('./presets/spacing.js'),
-    require('./presets/font-size.js'),
-    require('./presets/border-radius.js'),
-  ],
+  presets: [require('./presets/colors.js'), require('./presets/font-size.js')],
   theme: {
+    ...padding,
+    ...margin,
+    ...borderRadius,
+    ...width,
     extend: {
       fontFamily: {
         sans: [
