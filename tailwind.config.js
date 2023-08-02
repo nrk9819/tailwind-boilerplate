@@ -61,16 +61,6 @@ module.exports = {
                 display: 'block',
                 overflowX: 'auto',
               },
-              'pre code::-webkit-scrollbar': {
-                height: '8px',
-              },
-              'pre code::-webkit-scrollbar-thumb': {
-                background: theme('colors.gray[600]'),
-                borderRadius: '4px',
-              },
-              'pre code::-webkit-scrollbar-thumb:hover': {
-                background: theme('colors.gray[400]'),
-              },
             },
           ],
         },
