@@ -1,81 +1,83 @@
+const { round, rem, em } = require('./helpers/units.js');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     fontSize: {
       /** 1rem is set to 10px by default */
       12: [
-        '1.2rem',
+        rem(12),
         {
-          lineHeight: '1.45',
+          lineHeight: em(18, 12),
         },
       ],
       14: [
-        '1.4rem',
+        rem(14),
         {
-          lineHeight: '1.45',
+          lineHeight: em(20, 14),
         },
       ],
       16: [
-        '1.6rem',
+        rem(16),
         {
-          lineHeight: '1.45',
+          lineHeight: em(24, 16),
         },
       ],
       18: [
-        '1.8rem',
+        rem(18),
         {
-          lineHeight: '1.4',
+          lineHeight: em(26, 18),
         },
       ],
       20: [
-        '2rem',
+        rem(20),
         {
-          lineHeight: '1.4',
+          lineHeight: em(28, 20),
         },
       ],
       24: [
-        '2.4rem',
+        rem(24),
         {
-          lineHeight: '1.33',
+          lineHeight: em(34, 24),
         },
       ],
       30: [
-        '3rem',
+        rem(30),
         {
-          lineHeight: '1.25',
+          lineHeight: em(38, 30),
         },
       ],
       36: [
-        '3.6rem',
+        rem(36),
         {
-          lineHeight: '1.2',
+          lineHeight: em(42, 36),
         },
       ],
       48: [
-        '4.8rem',
+        rem(48),
         {
-          lineHeight: '1.15',
+          lineHeight: em(54, 48),
           letterSpacing: '-0.02em',
         },
       ],
       64: [
-        '6.4rem',
+        rem(64),
         {
-          lineHeight: '1.05',
+          lineHeight: em(68, 64),
           letterSpacing: '-0.02em',
         },
       ],
       80: [
-        '8rem',
+        rem(80),
         {
-          lineHeight: '1',
+          lineHeight: em(80, 80),
           letterSpacing: '-0.04em',
         },
       ],
       96: [
-        '9.6rem',
+        rem(96),
         {
-          lineHeight: '1',
+          lineHeight: em(94, 96),
           letterSpacing: '-0.04em',
         },
       ],

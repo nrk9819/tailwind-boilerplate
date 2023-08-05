@@ -12,8 +12,9 @@
   background: #eceff3;
 }
 
+/* Codebox scrollbar */
 pre code::-webkit-scrollbar {
-  height: 8px;
+  height: 6px;
 }
 pre code::-webkit-scrollbar-thumb {
   background: #516076;
@@ -25,4 +26,10 @@ pre code::-webkit-scrollbar-thumb:hover {
 pre code::-webkit-scrollbar-track {
   background: #394456;
   border-radius: 4px;
+}
+
+@media (min-width: 640px) {
+  pre code::-webkit-scrollbar {
+    height: 8px;
+  }
 }
